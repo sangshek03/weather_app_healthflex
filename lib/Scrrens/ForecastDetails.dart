@@ -30,7 +30,7 @@ class _ForecastDetailsState extends State<ForecastDetails> {
     });
 
     String location_name = widget.location;
-    String apiKey = 'gRqAgFXNhE61KclNYT8FBHHT0K1149rB';
+    String apiKey = 'k1QR4GvBqgsTu77qysRgdimDkt7G5TO1';
 
     final response = await http.get(
         Uri.parse(
@@ -47,7 +47,7 @@ class _ForecastDetailsState extends State<ForecastDetails> {
       setState(() {
         isLoading = false;
       });
-      showErrorDialog(context, "Failed to load weather data, Please Try Again Later");
+
       throw Exception('Failed to load forecast data');
     }
   }

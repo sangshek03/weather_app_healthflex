@@ -45,13 +45,17 @@ class _StateHomePageDetails extends State<HomePageDetails> {
 
     try {
       String location = location_name;
-      String apiKey = 'gRqAgFXNhE61KclNYT8FBHHT0K1149rB';
+      String apiKey = 'k1QR4GvBqgsTu77qysRgdimDkt7G5TO1';
 
       final response = await http.get(Uri.parse(
           'https://api.tomorrow.io/v4/weather/realtime?location=$location&apikey=$apiKey'));
 
+      // print(response.statusCode);
+
       if (response.statusCode == 200) {
         Map<String, dynamic> data = jsonDecode(response.body);
+
+        // print(data);
 
         DateTime time = DateTime.parse(data['data']['time']);
         double temperature = data['data']['values']['temperature'];
@@ -72,7 +76,8 @@ class _StateHomePageDetails extends State<HomePageDetails> {
           isLoading = false;
         });
       } else {
-        showErrorDialog(context, "Failed to load weather data, Please Try Again Later");
+        showErrorDialog(
+            context, "Failed to load weather data, Please Try Again Later");
         throw Exception('Failed to load weather data');
       }
     } catch (error) {
@@ -156,7 +161,10 @@ class _StateHomePageDetails extends State<HomePageDetails> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => ForecastDetailsScreen(location: typed_location.length == 0 ? 'bangalore' : typed_location)),
+                  builder: (context) => ForecastDetailsScreen(
+                      location: typed_location.length == 0
+                          ? 'bangalore'
+                          : typed_location)),
             );
           },
           child: Text(
