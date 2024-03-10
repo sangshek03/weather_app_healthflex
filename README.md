@@ -1,7 +1,7 @@
 # Weather Application README
 
 ## Assignment Overview:
-This repository contains the source code for a weather application developed using Flutter. The application provides real-time weather information as well as forecasts for specified locations. Its purpose is to offer users a convenient way to check the weather conditions and forecasts for various locations.
+This repository contains the source code for a weather application developed using Flutter. The application provides real-time weather information as well as forecasts for specified locations. Using My apiKey because provide apiKey limit hit again and again. Also get popUp whenever showing error while fetching data.
 
 ## How to Run the Application:
 To run the application locally, follow these steps:
